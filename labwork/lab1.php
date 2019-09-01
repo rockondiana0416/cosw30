@@ -40,11 +40,11 @@
             Diana Hinchcliffe
             September 1, 2019 */
 
-            echo '<p>Some of my favorite websites are <a href=\\"https://www.google.com/\\">Google</a>, <a href ="\\https://www.nordstromrack.com/\\">Nordstrom Rack</a>, and <a href="\\https://www.facebook.com/\\">Facebook</a>.</p>
+            echo "<p>Some of my favorite websites are <a href='https://www.google.com/'>Google</a>, <a href ='https://www.nordstromrack.com/'>Nordstrom Rack</a>, and <a href='https://www.facebook.com/'>Facebook</a>.</p>
 
-            <p>This assignment hasn't been to bad. I decided to start this in <a href=\\"https://codepen.io/rockondiana/pen/yLBoWYK?editors=1100\\">CodePen</a> 
+            <p>This assignment hasn't been to bad. I decided to start this in <a href='https://codepen.io/rockondiana/pen/yLBoWYK?editors=1100'>CodePen</a> 
             and, then copy it into my AWS Classroom. I wanted to see how the page would render. I like to see how my coding looks like while doing it. It seems 
-            like I have to put my code through Github before I can see it. And why is my ?> showing up on the screen below? Also, when I put a semicolon after my paragragh closing tag that shows up too. </p>; 
+            like I have to put my code through Github before I can see it. And why is my ?> showing up on the screen below? Also, when I put a semicolon after my paragragh closing tag that shows up too. </p>"; 
         ?>
     </body>
 </html>
