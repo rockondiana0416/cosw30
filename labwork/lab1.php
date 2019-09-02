@@ -40,7 +40,7 @@
             Diana Hinchcliffe
             September 1, 2019 */
 
-            echo "<p>Some of my favorite websites are <a href='https:www.google.com/' target='_blank'>Google</a>,
+            echo "<p>Some of my favorite websites are <a href='https://www.google.com/' target='_blank'>Google</a>,
             <a href ='https://www.nordstromrack.com/' target='_blank'>Nordstrom Rack</a>, and <a href='https://www.facebook.com/' 
             target=_'blank'>Facebook</a>.</p>
 
