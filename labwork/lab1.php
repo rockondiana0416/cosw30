@@ -33,18 +33,22 @@
         we were in class on Wednesday. I had to make sure I got some phone numbers. Mainly this summer 
         my favorite thing to do was sit by the pool.</p>
         
-        <p>This is the link to my <a href="\\https://github.com/rockondiana0416/cosw30\\">Github</a> account.
+        <p>This is the link to my <a href="https://github.com/rockondiana0416/cosw30" target="_blank">Github</a> account.
         I'm sure we will be doing some great stuff so let's fill it up!!!</p>
         <?php
             /* lab1.php
             Diana Hinchcliffe
             September 1, 2019 */
 
-            echo "<p>Some of my favorite websites are <a href='https://www.google.com/'>Google</a>, <a href ='https://www.nordstromrack.com/'>Nordstrom Rack</a>, and <a href='https://www.facebook.com/'>Facebook</a>.</p>
+            echo "<p>Some of my favorite websites are <a href='https:www.google.com/' target='_blank'>Google</a>,
+            <a href ='https://www.nordstromrack.com/' target='_blank'>Nordstrom Rack</a>, and <a href='https://www.facebook.com/' 
+            target=_'blank'>Facebook</a>.</p>
 
-            <p>This assignment hasn't been to bad. But after trying to see my work on heroku. This is hard. lol I decided to start this in <a href='https://codepen.io/rockondiana/pen/yLBoWYK?editors=1100'>CodePen</a> 
-            and, then copy it into my AWS Classroom. I wanted to see how the page would render. I like to see how my coding looks like while doing it. It seems 
-            like I have to put my code through Github before I can see it. And why is my ?> showing up on the screen below? Also, when I put a semicolon after my paragragh closing tag that shows up too. </p>"; 
+            <p>This assignment hasn't been to bad. But after trying to see my work on heroku. 
+            This is hard. lol I decided to start this in <a href='https://codepen.io/rockondiana/pen/yLBoWYK?editors=1100' 
+            target=_'blank'>CodePen</a> and, then copy it into my AWS Classroom. I wanted to see 
+            how the page would render. I like to see what my coding looks like while doing it. It seems 
+            like I have to put my code through Github before I can see it. </p>"; 
         ?>
     </body>
 </html>
