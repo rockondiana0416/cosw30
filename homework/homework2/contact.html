@@ -1,0 +1,119 @@
+<html>
+  <head>
+    <h1 id="title">Marty Bird for Mayor</h1>
+    <p id="description">My name is Marty Bird and I am running for Mayor of the Ozarks Missouri. I chose to move my family from Chicago so that we may have a better, slower paced life
+    No, that's not true. To actually be truthful, I launder money for the Mexican Cartel. Are you excited yet? Now before you jump to conclusions, let me explain.
+    My faily was in danger, they were going to be killed unless I laundered $500 million dollars for them. So here I am. I own several bussiness in the comunity a reataurant, a strip club, and a funeral home. 
+    I am qualified for this position because we will have an indiposable amount of money to put into the community. So, that means better schools, new playgrounds, new paved roads, no city taxes, and that's just the start. 
+    I will have you best interest at hand because I must protect my family and that in turn protects you, my fellow comunity members. </p>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  
+  <body>
+    
+    <form method="POST" action="process_contact.php">
+      
+      
+      <label for="first_name">First Name:</label> 
+      <input id="first_name" name="name" type="name" placeholder="Enter Your First Name" required>
+      
+      <label for="last-name">Last Name:</label>
+      <input id="last_name" name="name" type="name" placeholder="Enter Your Last Name" required>
+      
+      <label for="email">Email:</label>
+      <input id="email" name="email" type="email" method= placeholder="Enter Your Email" required>
+      
+      <label for="dropdown">What is your gender?</label> 
+      <select id="dropdown" name="gender" type="text" list="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="not-say">Prefer not to say.</option>
+        </select>
+      
+    
+      
+      <section id="age">
+        <label>What is your age?</label>
+        <ul>
+      <li class="radio">
+        <label>
+          <input class="age" name="radio-buttons" value="1" type="radio">18-25
+        </label>
+      </li>
+      <li class="radio">
+        <label>
+          <input class="age" name="radio-buttons" value="2" type="radio">26-34
+        </label>
+      </li>
+      <li class="radio">
+        <label>
+          <input class="age" name="radio-buttons" value="3" type="radio">36-50
+        </label>
+      </li>
+      <li class="radio">
+        <label>
+          <input class="age" name="radio-buttons" value="4" type="radio">50+
+        </label>
+      </li>
+        </ul>
+      </section>
+      
+      <section id="interests">
+        <label>What do you like to do? (Check all that apply.)</label>
+        <ul>
+          <li class="checkbox">
+            <label>
+              <input class="interests" name="likes" value="1" type="checkbox">
+              Find out how to launder money?
+            </label>
+              </li>
+            <li class="checkbox">
+            <label>
+              <input class="interests" name="likes" value="2" type="checkbox">
+              Bouncer at a strip club
+            </label>
+              </li>
+              <li class="checkbox">
+            <label>
+              <input class="interests" name="likes" value="3" type="checkbox">
+              Mortition
+            </label>
+              </li>
+                <li class="checkbox">
+            <label>
+              <input class="interests" name="likes" value="4" type="checkbox">
+              Boating
+            </label>
+              </li>
+                <li class="checkbox">
+            <label>
+              <input class="interests" name="likes" value="5" type="checkbox">
+              Carpenter
+            </label>
+              </li>
+                <li class="checkbox">
+            <label>
+              <input class="interests" name="likes" value="6" type="checkbox">
+              Guns
+            </label>
+              </li>
+        </ul>
+      </section>
+      
+      <section id="comments">
+          <label id="comments">Comments:</label> 
+      <textarea name="textarea" type="textarea" placeholder="Any Additional Comments here" max="200" required></textarea>
+      <input type="hidden" value="register" name="type">
+        
+        
+        <input id="submit" class="btn" type="submit" value="submit">
+          </section>
+        
+      
+    </form>
+    
+      </body>
+      
+      <footer>Thank you for your support!</footer>
+  
+</html>
