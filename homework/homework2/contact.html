@@ -1,51 +1,34 @@
 <!doctype HTML>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Marty Bird for Mayor<title>
-    <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet"> 
-    <style>
-    h1 {
-      background: #ffffff;
-      border: 10px solid #bf0c3d;
-      font-family: 'Cinzel', serif;
-      padding: 3%;
-      text-align: center;
-      font-size: 35px;
-}
-      
-    </style>
+    <title>Marty Bird for Mayor</title>
+    
   </head>
   
   <body>
-    <header>
-      <h1></a>>Marty Bird</h1>
-    </header>
-    
-      <p id="description">My name is Marty Bird and I am running for Mayor of The Ozarks Missouri. I chose to move my family from Chicago so that we may have a better, slower paced life.
+    <h1>Marty Bird for Mayor</h1>
+    <p>My name is Marty Bird and I am running for Mayor of the Ozarks Missouri. I chose to move my family from Chicago so that we may have a better, slower paced life
     No, that's not true. To actually be truthful, I launder money for the Mexican Cartel. Are you excited yet? Now before you jump to conclusions, let me explain.
-    My family was in danger, they were going to be killed unless I laundered $500 million dollars for them. So here I am. I own several bussiness in the comunity a reataurant, a strip club, and a funeral home. 
+    My faily was in danger, they were going to be killed unless I laundered $500 million dollars for them. So here I am. I own several bussiness in the comunity a reataurant, a strip club, and a funeral home. 
     I am qualified for this position because we will have an indiposable amount of money to put into the community. So, that means better schools, new playgrounds, new paved roads, no city taxes, and that's just the start. 
     I will have you best interest at hand because I must protect my family and that in turn protects you, my fellow comunity members. </p>
-    
     <form method="POST" action="process_contact.php">
       
       
       <label for="first_name">First Name:</label> 
-      <input name="first_name" name="name" type="name" placeholder="Enter Your First Name" required>
+      <input id="first_name" name="name" type="name" placeholder="Enter Your First Name" required>
       
       <label for="last-name">Last Name:</label>
-      <input name="last_name" name="name" type="name" placeholder="Enter Your Last Name" required>
+      <input id="last_name" name="name" type="name" placeholder="Enter Your Last Name" required>
       
       <label for="email">Email:</label>
-      <input name="email" name="email" type="email" method= placeholder="Enter Your Email" required>
+      <input id="email" name="email" type="email" method= placeholder="Enter Your Email" required>
       
       <label for="dropdown">What is your gender?</label> 
       <select id="dropdown" name="gender" type="text" list="gender">
-        <option value="empty"></option>
         <option value="male">Male</option>
         <option value="female">Female</option>
-        <option value="not-say">Prefer not to say</option>
+        <option value="not-say">Prefer not to say.</option>
         </select>
       
     
@@ -118,67 +101,12 @@
         </ul>
       </section>
       
-      
-      
-      <section id="contributions">
-        <label>Your generous support will help me pay back the Mexican Cartel.</label>
-        <ul>
-          <li class="checkbox">
-            <label>
-              <input class="contributions" name="money" value="1" type="checkbox">
-              $100.00+
-            </label>
-              </li>
-            <li class="checkbox">
-            <label>
-              <input class="contributions" name="money" value="2" type="checkbox">
-              $500+
-            </label>
-              </li>
-              <li class="checkbox">
-            <label>
-              <input class="contributions" name="money" value="3" type="checkbox">
-              $5000+
-            </label>
-              </li>
-                <li class="checkbox">
-            <label>
-              <input class="contributions" name="money" value="4" type="checkbox">
-              $50,000+
-            </label>
-              </li>
-                <li class="checkbox">
-            <label>
-              <input class="contributions" name="money" value="5" type="checkbox">
-              $100,000,000+
-            </label>
-              </li>
-                <li class="checkbox">
-            <label>
-              <input class="contributions" name="money" value="6" type="checkbox">
-              $500,00,000
-            </label>
-              </li>
-        </ul>
-      </section>
-      
-            <p>Would you like to recieve news about my campaign?</p>
-
-      <section id="mail">
-          <input type="checkbox" id="mail" name="mail"
-         checked>
-          <label for="mail">Scales</label>
-          <input type="checkbox" id="mail" name="mail">
-          <label for="horns">Horns</label>
-      </section>
-      
       <section id="comments">
           <label id="comments">Comments:</label> 
-      <textarea name="textarea" type="textarea" placeholder="Any Additional Comments here" max="200"></textarea>
-      
-      
-      
+      <textarea name="textarea" type="textarea" placeholder="Any Additional Comments here" max="200" required></textarea>
       <input type="hidden" value="register" name="type">
+        
+        
         <input id="submit" class="btn" type="submit" value="submit">
           </section>
         
