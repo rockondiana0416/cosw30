@@ -10,6 +10,8 @@
         $interests = $_POST['interests'];
         $comments = $_POST['comments'];
         
+        $correct_email = 'test@test.com';
+        
         if($email == $correct_email) {
         echo "<h1>Thank you! I'm gonna make you a lot of money<h1>";
         echo "<p>First name: $first_name</p>";
