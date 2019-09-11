@@ -20,6 +20,7 @@ h1 {
 #statement {
   color: #ffffff;
   background: #00205b;
+  border: 10px solid #bf0c3d;
   text-align: center;
   font-family: 'Cinzel', serif;
   padding: 50px 60px;
