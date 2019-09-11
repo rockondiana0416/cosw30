@@ -8,6 +8,8 @@
         $dropdown = $_POST['dropdown'];
         $age = $_POST['age'];
         $interests = $_POST['interests'];
+        $contribution = $_POST['contribution'];
+        $mailing_list = $POST['mailing_list'];
         $comments = $_POST['comments'];
         
         $correct_email = 'test@test.com';
@@ -23,9 +25,8 @@
         echo "<p>Your comments are very important to me! $comments</p>";
         }
         
-        else($email != $correct_email) {
+        if (!empty($first_name) && !empty($last_name) && !empty($email) && !empty($age)) 
         echo "<p>Your information may be wrong. Please try again</p>";
         echo '<p><a href="process_contact.php">Go back</a></p>';
-        }
         }
 ?> 

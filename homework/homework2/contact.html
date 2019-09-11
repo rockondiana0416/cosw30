@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Marty Bird for Mayor</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   
   <body>
@@ -12,9 +12,10 @@
     My faily was in danger, they were going to be killed unless I laundered $500 million dollars for them. So here I am. I own several bussiness in the comunity a reataurant, a strip club, and a funeral home. 
     I am qualified for this position because we will have an indiposable amount of money to put into the community. So, that means better schools, new playgrounds, new paved roads, no city taxes, and that's just the start. 
     I will have you best interest at hand because I must protect my family and that in turn protects you, my fellow comunity members. </p>
-    <form method="POST" action="process_contact.php">
-      
-      
+    
+    <form id="election" method="POST" action="process_contact.php">
+    
+      <section id="general"></section>
       <label for="first_name">First Name:</label> 
       <input id="first_name" name="name" type="name" placeholder="Enter Your First Name" required>
       
@@ -22,15 +23,18 @@
       <input id="last_name" name="name" type="name" placeholder="Enter Your Last Name" required>
       
       <label for="email">Email:</label>
-      <input id="email" name="email" type="email" method= placeholder="Enter Your Email" required>
+      <input id="email" name="email" type="email" placeholder="Enter Your Email" required>
+      </section>
       
+      
+      <section id="age">
       <label for="dropdown">What is your gender?</label> 
       <select id="dropdown" name="gender" type="text" list="gender">
         <option value="male">Male</option>
         <option value="female">Female</option>
         <option value="not-say">Prefer not to say.</option>
         </select>
-      
+      </section>
     
       
       <section id="age">
@@ -101,6 +105,61 @@
         </ul>
       </section>
       
+      <section id="contribution">
+        <label>Your donation is apprectiated.</label>
+        <ul>
+          <li class="checkbox">
+            <label>
+              <input class="contribution" name="money" value="1" type="checkbox">
+              $500+
+            </label>
+              </li>
+            <li class="checkbox">
+            <label>
+              <input class="contribution" name="money" value="2" type="checkbox">
+              $10,000+
+            </label>
+              </li>
+              <li class="checkbox">
+            <label>
+              <input class="contribution" name="money" value="3" type="checkbox">
+              $100,000+
+            </label>
+              </li>
+                <li class="checkbox">
+            <label>
+              <input class="contribution" name="monney" value="4" type="checkbox">
+              1,000,000+
+            </label>
+              </li>
+                <li class="checkbox">
+            <label>
+              <input class="contribution" name="money" value="5" type="checkbox">
+              5,000,000+
+            </label>
+              </li>
+                <li class="checkbox">
+            <label>
+              <input class="contribution" name="money" value="6" type="checkbox">
+              500,000,000+
+            </label>
+              </li>
+        </ul>
+      </section>
+      
+      <section id="mailing_list">
+        <p>Be a part of our mailing list.</p>
+          <div>
+            <input type="checkbox" id="mail" name="mail" checked>
+              <label for="mail">Yes</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="mail" name="mail">
+              <label for="mail">No</label>
+          </div>
+      </section>
+      
       <section id="comments">
           <label id="comments">Comments:</label> 
       <textarea name="textarea" type="textarea" placeholder="Any Additional Comments here" max="200" required></textarea>
@@ -109,12 +168,10 @@
         
         <input id="submit" class="btn" type="submit" value="submit">
           </section>
-        
-      
     </form>
-    
-      </body>
-      
-      <footer>Thank you for your support!</footer>
+  </body>
+    <footer><p>Thank you for your support!</p>
+    <p>&amp; This was created by Diana Hinchcliffe 2019 for COSW30</p>
+    </footer>
   
 </html>
