@@ -11,6 +11,7 @@
         $contribution = $_POST['contribution'];
         $mailing_list = $POST['mailing_list'];
         $comments = $_POST['comments'];
+        $correct_email = 'test@test.com';
         
         if (($first_name == 'first_name') && ($last_name == 'last_name') && ($email == 'email') && ($age == 'age')) {
         echo "<h1>Thank you! I'm gonna make you a lot of money<h1>";
