@@ -11,7 +11,7 @@
         $contribution = $_POST['contribution'];
         $mailing_list = $POST['mailing_list'];
         $comments = $_POST['comments'];
-    }
+    
         
         $correct_email = 'test@test.com';
         
@@ -29,5 +29,5 @@
         echo "<p>Your information may be wrong. Please try again</p>";
         echo '<p><a href="process_contact.php">Go back</a></p>';
         
-        }
+        }}
 ?> 
