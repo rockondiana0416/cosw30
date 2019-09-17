@@ -1,0 +1,23 @@
+#logo {
+    height: 250px;
+    width: 500px;
+    display: block;
+    margin-top: 35px;
+}
+
+#container {
+    width: 500px;
+    display: block;
+    margin: 15px 450px;
+}
+
+h2 {
+    text-align: center;
+}
+
+#submit {
+    padding: 5px;
+    margin: 15px;
+}
+
+
