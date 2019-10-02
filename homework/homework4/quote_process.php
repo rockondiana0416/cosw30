@@ -1,139 +1,73 @@
-
-
-
-
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Quote</title>
+    </head>
+    <body>
 <?php
 
-// Display the original text to an array
-    $text = $_POST['text'];
-    print_r($text);
-    
-// Display the count of the total words
-    $textExplode = explode(' ', $text); //converts string to array
-    print_r($textExplode);
+// Store the string from the form in a variable
+// Convert the string into an array (explode) 
+     $text = $_POST['text']; 
+        echo "This is your quote: $text<br>";
+     
+     $textExplode = explode(' ', $text); //converts string to array
+        print_r ($textExplode);
+        
+// Output the original array (foreach) and a count of how many words are in the array (count)
+     $i = 0;
+        $num = count($textExplode); {
+            foreach($textExplode as $key => $value ) {
+                $i++;
+                echo "<br>$key - $value<br> ";
+                }   
+        }
+            
+// Sort the array alphabetically (sort)
+// Output the sorted array (foreach)
+    $i = 0;    
+        $quote = sort($textExplode); {
+            foreach($textExplode as $key => $value) {
+                $i++;
+                echo "$key - $value, ";
+            }
+        }
 
-// Display the number of the words
-    $num = count($textExplode);
-    print_r($num);
-    
-    
-    
-    $age = array("x"=>"x_value", "shankar"=>"47", "kailash"=>"41"); 
-ksort($age); 
-  
-foreach($age as $x => $x_value) { 
-    echo "Key=" . $x . ", Value=" . $x_value; 
-    echo "<br>"; 
-}
-die;
+// Reverse sort the array (rsort)
+// Output the reverse sorted array (foreach)
+    $i = 0;    
+        $quote = rsort($textExplode); {
+            foreach($textExplode as $key => $value) {
+                $i++;
+                echo "<br>$key - $value ";
+            }
+        }
 
-    
-    
-    
-    
-
-    $arr = explode(' ' , $text);
-    ksort($array);
-    foreach($arr as $array => $num) {
-        echo "$num  $array"; 
-}
-die;
-
-
-ksort($alphabet);
-    
-foreach (range('array') as $alphabet) {
-    echo $alphabet;   
-}
-die;
-
-    
-    
-    
-    $alphabet = array();
-    ksort($alphabet);
-    
-    foreach($value as $alphabet) {
-        echo $alphabet;
+// Add three words to the array (array_push)
+// Output the array (foreach) and a count of how many words are in the array (count)
+    $i = 0;
+        array_push($textExplode,"happy","glad","sad"); {
+            foreach($textExplode as $key => $value) {
+                $i++;
+                echo "<br>$key - $value<br> ";
+            }
     }
-    die;
-    
-  ?>  
-    
-    
-    $textExplode = explode(' ', $text);   
-    ksort($textExplode);
 
-foreach($text as $num => $alphabet) {
-    echo $alphabet;
-    echo "<br>";
-}
-die;
-
-    
-    
-    
-    
-    
-    
-    
-    ksort($alphabet);
-    foreach ($alphabet as $list);
-    print_r($list);
-    die;
-
-
-
-$fruits = array("lemon", "orange", "banana", "apple");
-sort($fruits);
-foreach ($fruits as $key => $val) {
-    echo "fruits[" . $key . "] = " . $val . "\n";
-}
-
-    
-    
-
-
-
-
-
-
-// trial
-     // Display the movies sorted by title:
-                    ksort($list);
-                    echo '<tr><td colspan="2">Sorted by title:</td></tr>';
-                    
-                    foreach ($list as $title => $alphabet) {
-                        echo "$alphabet";
-                    }
-die;
-     
-     
-    
-    
-
-
-
-
-
-
-
-
-$words = range('0','15');
-foreach ($words as $value) {
-echo "<p>$words</p><ul>";
-}
-
-foreach ($textExplode as $value) {
-    echo "The value as is $value.";
-}
-
-$textExplode = explode(' ', $text); //converts string to array
-    
-    
-    shuffle($textExplode);
-
-
-
-
+// Remove the first three words of the array (array_splice)
+// Output the array (foreach) and a count of how many words are in the array (count)
+    $i = 0;
+        $new_quote = array_splice($textExplode, 3); {
+            foreach($new_quote as $key => $value) {
+                $i++;
+                echo "$value - $key, ";
+            }
+    }
 ?>
+
+<h1>Do you want to try again? <a href="quote.html">Go Back</quote></a>
+<h1>Also check out the population of <a href="population.php">US Cities</a></h1>
+    </body>
+</html>
+
+
