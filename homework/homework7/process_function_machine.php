@@ -11,55 +11,62 @@
             <input type="text" name="num1" placeholder="Number 1">
             <br>
             
-            <label for="operator"></label> 
+                    <label for="operator"></label>
                       <select id="operator" name="operator">
-                        <option value="none">Please Select</option>
-                        <option value="add">add (+)</option>
+                        <option value="none">Please Select   </option>
+                        <option value="add">add (+)          </option>
                         <option value="subtract">subtract (-)</option>
                         <option value="multiply">multiply (*)</option>
-                        <option value="divide">divide (/)</option>
+                        <option value="divide">divide (/)    </option>
                       </select>
             <br>
             
             <label for="num2">Please enter a number:</label>
             <input type="text" name="num2" placeholder="Number 2">
             <br>
-            <button type="submit" name="submit" value="enter">Calculate</button>
+            <button type="submit" name="submit" class="btn" value="enter">Calculate</button>
         </form>
         
         
 <?php
+
 function calculate() {
     $num1 = $_POST['num1'];
     $num2 = $_POST['num2'];
+    $submit = $_POST['submit'];
     
     switch($_POST['operator']) {
-        case "Add":
-            $num1 + $num2 = $sum;
-            echo $sum;
+        case "add":
+            $num1 + $num2 = $result;
+            return "$result";
             break;
             
-        case "Subtract":
-            $num1 - $num2 = $diff;
-            echo $diff;
+        case "subtract":
+            $num1-$num2 = $result;
+            return "$result";
             break;
             
-        case "Multiply":
-            $num1 * $num2 = $prod;
-            echo $prod;
+        case "multiply":
+            $num1*$num2 = $result;
+            return "$result";
             break;
             
-        case "Divide":
-            $num1 / $num2 = $quo;
-            echo $quo;
+        case "divide":
+            $num1/$num2 = $result;
+            return "$result";
             break;
         
         default:
-            echo "Please go back and fill in your numbers.";
+            $result="Error";
+            break;
     }
 }
-    echo "Your calculations are: " . calculate();
+
+    echo "Your calculations are: " . calculate(); 
 ?>
+
+        
+        
     </body>
 </html>
 
