@@ -12,7 +12,7 @@
             <br>
             
             <label for="operator"></label> 
-                      <select id="dropdown">
+                      <select id="operator" name="operator">
                         <option value="none">Please Select</option>
                         <option value="add">add (+)</option>
                         <option value="subtract">subtract (-)</option>
