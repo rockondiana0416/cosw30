@@ -29,40 +29,49 @@
         
         
 <?php
-
-function calculate() {
     $num1 = $_POST['num1'];
     $num2 = $_POST['num2'];
-    $submit = $_POST['submit'];
+    $operator = $_POST['operator'];
+
+
+
+
+function calculate($number_one, $number_two, $operator) {
+    $result = '';
+    
     
     switch($_POST['operator']) {
-        case "add":
-            $num1+$num2 = $result;
-            return "$result";
+        case 'add':
+            $num1 + $num2 = $result;
+            return '$result';
+            $result = $first_number + $second_number;
             break;
             
-        case "subtract":
-            $num1-$num2 = $result;
-            return "$result";
+        case 'subtract':
+            $num1 - $num2 = $result;
+            return '$result';
+            $result = $first_number - $second_number;
             break;
             
-        case "multiply":
-            $num1*$num2 = $result;
-            return "$result";
+        case 'multiply':
+            $num1 * $num2 = $result;
+            return '$result';
+            $result = $first_number * $second_number;
             break;
             
-        case "divide":
-            $num1/$num2 = $result;
-            return "$result";
+        case 'divide':
+            $num1 / $num2 = $result;
+            return '$result';
+            $result = $first_number / $second_number;
             break;
         
         default:
-            $result="Error";
+            $result='Error';
             break;
     }
 }
 
-    echo "Your calculations are: " . calculate(); 
+    echo 'Your calculations are: ' . calculate($num1, $num2, $operator); 
 ?>
 
         
