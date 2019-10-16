@@ -29,45 +29,43 @@
         
         
 <?php
-    $num1 = $_POST['num1'];
-    $num2 = $_POST['num2'];
-    $operator = $_POST['operator'];
 
-function calculate($first_number, $second_number, $operator) {
+    // $num1 = $_POST['num1'];
+    // $num2 = $_POST['num2'];
+    // $operator = $_POST['operator'];
+// function calculate($first_number, $second_number, $operator) {
+    
+if (!empty($num1) && !empty($num2) && !empty($operator)) {
     
     switch($operator) {
         case 'add':
             $num1 + $num2 = $result;
-            return "$result";
+            echo $num1 + $num2 = $result; 
             break;
             
         case 'subtract':
             $num1 - $num2 = $result;
-            return "$result";
+            echo $num1 - $num2 = $result;
             break;
             
         case 'multiply':
             $num1 * $num2 = $result;
-            return "$result";
+            echo $num1 * $num2 = $result;
             break;
             
         case 'divide':
             $num1 / $num2 = $result;
-            return "$result";
-            break;
-            
-        default:
-            $result = "Error";
-            break;
-            
-        
+            echo $num1 / $num2 = $result;
+            break;        
+// }
     }
-    
+    }
+     else { 
+        echo 'Error, please go back.';
 }
+echo "Your calculations are: " . $result . calculate($num1, $num2, $operator);   
+// echo "Your calculations are: " . calculate($num1, $num2, $operator); 
 
-       
-echo "Your calculations are: " . calculate($num1, $num2, $operator);   
-//I tried adding $result in there too. It didn't work.
 ?>
 
     </body>
