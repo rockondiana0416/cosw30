@@ -65,24 +65,11 @@ function calculate($first_number, $second_number, $operator) {
     
 }
 
-calculate($num1, $num2, $operator);        
-echo "Your calculations are: " . $result 
-
-
-
-
-
-
-
-
-
-    
-    
-    
+       
+echo "Your calculations are: " . calculate($num1, $num2, $operator);   
+//I tried adding $result in there too. It didn't work.
 ?>
 
-        
-        
     </body>
 </html>
 
