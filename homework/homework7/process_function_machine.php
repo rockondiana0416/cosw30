@@ -6,9 +6,9 @@
         <title>Function Machine</title>
     </head>
     <body>
-        <form id="function_machine" method="POST" action="process_function_machine.php">
+        <form id="function_machine" method="GET" action="process_function_machine.php">
             <label for="num1">Please enter a number:</label>
-            <input type="text" name="num1" placeholder="Number 1">
+            <input type="number" name="num1" placeholder="Number 1">
             <br>
             
                     <label for="operator"></label>
@@ -22,7 +22,7 @@
             <br>
             
             <label for="num2">Please enter a number:</label>
-            <input type="text" name="num2" placeholder="Number 2">
+            <input type="number" name="num2" placeholder="Number 2">
             <br>
             <button type="submit" name="submit" class="btn" value="enter">Calculate</button>
         </form>
@@ -33,58 +33,57 @@
     $num2 = $_POST['num2'];
     $operator = $_POST['operator'];
 
-
-
-
-function calculate($number_one, $number_two, $operator) {
-    $result = '';
+function calculate($first_number, $second_number, $operator) {
     
-    
-    switch($_POST['operator']) {
+    switch($operator) {
         case 'add':
             $num1 + $num2 = $result;
-            return '$result';
-            $result = $first_number + $second_number;
+            return "$result";
             break;
             
         case 'subtract':
             $num1 - $num2 = $result;
-            return '$result';
-            $result = $first_number - $second_number;
+            return "$result";
             break;
             
         case 'multiply':
             $num1 * $num2 = $result;
-            return '$result';
-            $result = $first_number * $second_number;
+            return "$result";
             break;
             
         case 'divide':
             $num1 / $num2 = $result;
-            return '$result';
-            $result = $first_number / $second_number;
+            return "$result";
             break;
-        
+            
         default:
-            $result='Error';
+            $result = "Error";
             break;
+            
+        
     }
+    
 }
 
-    echo 'Your calculations are: ' . calculate($num1, $num2, $operator); 
+calculate($num1, $num2, $operator);        
+echo "Your calculations are: " . $result 
+
+
+
+
+
+
+
+
+
+    
+    
+    
 ?>
 
         
         
     </body>
 </html>
-
-
-
-
-
-
-
-
 
 
