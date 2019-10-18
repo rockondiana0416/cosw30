@@ -1,4 +1,13 @@
-<!DOCTYPE html>
+<?php
+ function calculate($a = 0, $b = 0)
+ {
+ return ($a + $b);
+ }
+    $num1 = $_POST['num1'];
+    $num2 = $_POST['num2'];
+    $operator = $POST['operator'];
+?>
+<!doctype HTML>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -6,65 +15,61 @@
         <title>Function Machine</title>
     </head>
     <body>
-        <form id="function_machine" method="GET" action="process_function_machine.php">
-            <label for="num1">Please enter a number:</label>
-            <input type="number" name="num1" placeholder="Number 1">
+        <form action="process_function_machine.php" method="POST">
+            <label id="num1">Please enter a number:</label>
+            <input type="text" name="num1" value="0" placeholder="Number 1">
             <br>
             
-                    <label for="operator"></label>
-                      <select id="operator" name="operator">
-                        <option value="none">Please Select   </option>
-                        <option value="add">add (+)          </option>
-                        <option value="subtract">subtract (-)</option>
-                        <option value="multiply">multiply (*)</option>
-                        <option value="divide">divide (/)    </option>
+                    <label class="operator"></label>
+                      <select id="operator" name="operator" value="operator">
+                        <option label="">Please Select   </option>
+                        <option label="">add (+)          </option>
+                        <option label="">subtract (-)</option>
+                        <option label="">multiply (*)</option>
+                        <option label="">divide (/)    </option>
                       </select>
             <br>
             
-            <label for="num2">Please enter a number:</label>
-            <input type="number" name="num2" placeholder="Number 2">
+            <label id="num2">Please enter a number:</label>
+            <input type="text" name="num2" value="0" placeholder="Number 2">
             <br>
-            <button type="submit" name="submit" class="btn" value="enter">Calculate</button>
+            <input type="submit" value="Calculate"></input>
         </form>
         
         
 <?php
 
-    // $num1 = $_POST['num1'];
-    // $num2 = $_POST['num2'];
-    // $operator = $_POST['operator'];
-// function calculate($first_number, $second_number, $operator) {
-    
 if (!empty($num1) && !empty($num2) && !empty($operator)) {
-    
+     
     switch($operator) {
         case 'add':
-            $num1 + $num2 = $result;
-            echo $num1 + $num2 = $result; 
+            echo $num1 . " + " . $num2 . " = ";
+            echo calculate($num1+$num2); 
             break;
             
         case 'subtract':
-            $num1 - $num2 = $result;
-            echo $num1 - $num2 = $result;
+            echo $num1 . " - " . $num2 . " = ";
+            echo calculate($num1-$num2); 
             break;
+            
             
         case 'multiply':
-            $num1 * $num2 = $result;
-            echo $num1 * $num2 = $result;
+            echo $num1 . " * " . $num2 . " = ";
+            echo calculate($num1*$num2); 
             break;
             
+            
         case 'divide':
-            $num1 / $num2 = $result;
-            echo $num1 / $num2 = $result;
-            break;        
-// }
+            echo $num1 . " / " . $num2 . " = ";
+            echo calculate($num1/$num2); 
+            break;
+            
     }
     }
-     else { 
-        echo 'Error, please go back.';
-}
-echo "Your calculations are: " . $result . calculate($num1, $num2, $operator);   
-// echo "Your calculations are: " . calculate($num1, $num2, $operator); 
+    
+    else { 
+        echo "Please enter a number.";
+    }
 
 ?>
 
