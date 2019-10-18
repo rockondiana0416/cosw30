@@ -1,10 +1,5 @@
 <?php
- function calculate($a = 0, $b = 0)
- {
- return ($a + $b);
- }
-
-    if (isset($_POST['num1'])) {
+ if (isset($_POST['num1'])) {
     $num1 = $_POST['num1'];
 }
 
@@ -15,6 +10,11 @@
     if (isset($_POST['operator'])) {
     $operator = $_POST['operator'];
 }
+
+ function calculate($a = 0, $b = 0)
+ {
+ return ($a + $b);
+ }
 
 ?>
 <!doctype HTML>
