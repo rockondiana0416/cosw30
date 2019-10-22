@@ -32,11 +32,11 @@
 
 
                       <select id="operator" name="operator" value="operator">
-                        <option label="">Please Select   </option>
-                        <option label="">add (+)          </option>
-                        <option label="">subtract (-)</option>
-                        <option label="">multiply (*)</option>
-                        <option label="">divide (/)    </option>
+                        <option label="">Please Select</option>
+                        <option label="add">add (+)</option>
+                        <option label="subtract">subtract (-)</option>
+                        <option label="multiply">multiply (*)</option>
+                        <option label="divide">divide (/)</option>
                       </select>
             <br>
 
