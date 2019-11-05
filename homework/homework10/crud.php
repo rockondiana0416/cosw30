@@ -28,13 +28,12 @@ include('database.php');
             echo"Please confirm your password!</p>";
         }
 
-        if($first_name || $last_name || $email || $password || $confirm_password === $password) {
+        if(!empty($first_name) || (!empty($last_name)) || (!empty($email)) || (!empty($password))) {
+
             $insert_query = "INSERT INTO USER_HINCHCLIFFE (first_name, last_name, email, password)
                             VALUES ('$first_name', '$last_name', '$email', '$password')";
 
             $result = mysqli_query($connection, $insert_query);
-
-            } else { echo 'Please check your form.';
             }
 
             if ($result) {
@@ -42,6 +41,8 @@ include('database.php');
                 }   else {
                     echo 'error entering new user';
                 }
+
+
             }
         /*
         *   QUERY THE DATABASE AND STORE ALL USERS INTO A VARIABLE
