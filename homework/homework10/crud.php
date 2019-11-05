@@ -5,66 +5,61 @@ include('database.php');
 *   CHECK IF THE FORM HAS BEEN SUBMITTED AND INSERT
 *   NEW USER INTO THE DATABASE
 */
-if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (empty($_POST['first_name'])) {
-        $errors[] = 'You forgot to enter your first name.';
-    } else {
-        $first_name = trim($_POST['first_name']);
-    }
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $first_name = $_POST['first_name'];
+        $last_name = $_POST['last_name'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $confirm_password = $_POST['confirm_password'];
 
-    if (empty($_POST['last_name'])) {
-        $errors[] = 'You forgot to enter your last name.';
-    } else {
-        $last_name = trim($_POST['last_name']);
-    }
-
-    if (empty($_POST['email'])) {
-        $errors[] = 'You forgot to enter your email.';
-    } else {
-        $email = trim($_POST['email']);
-    }
-
-    if(!empty($_POST['password'])) {
-        if ($_POST['password'] != $_POST['confirm_password']) {
-            $errors[] = 'Your passwords do not match.';
-        } else {
-            $password = trim($_POST['password']);
+        if(empty($first_name)) {
+            echo "Please enter your first name!</p>";
         }
-    } else {
-        $errors[] = 'You forgot to enter your password.';
-    }
+        if(empty($last_name)) {
+            echo "Please enter your last name!</p>";
+        }
+        if(empty($email)) {
+                echo "Please enter your email address!</p>";
+        }
+        if(empty($password)) {
+            echo "Please enter a password!</p>";
+        }
+        if(empty($confirm_password) || $confirm_password != $password) {
+            echo"Please confirm your password!</p>";
+        }
 
-    if (empty($errors)) {
+        if($first_name || $last_name || $email || $password || $confirm_password === $password) {
+            $insert_query = "INSERT INTO USER_HINCHCLIFFE (first_name, last_name, email, password)
+                            VALUES ('$first_name', '$last_name', '$email', '$password')";
 
-        $insert_query = "INSERT INTO USER_HINCHCLIFFE (first_name, last_name, email, password)
-                        VALUES ('$first_name', '$last_name', '$email', '$password')";
+            $result = mysqli_query($connection, $insert_query);
 
-    $result = mysqli_query($connection, $insert_query);
+            } else { echo 'Please check your form.';
+            }
 
-    if ($result) {
-        echo 'new user added to the database';
-    }   else {
-        echo 'error entering new user';
-    }
-}
-}
-/*
-*   QUERY THE DATABASE AND STORE ALL USERS INTO A VARIABLE
-*/
-// Create your query
-$query = 'SELECT * FROM USER_HINCHCLIFFE';
-// Run your query
-$result = mysqli_query($connection, $query);
-// Check if the database returned anything
-if($result) {
-    // If the database query was successful, store
-    // the array of users into a variable
-    $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    print_r($rows);
-} else {
-    // Output an error
-    echo 'This does not work';
-}
+            if ($result) {
+                    echo 'new user added to the database';
+                }   else {
+                    echo 'error entering new user';
+                }
+            }
+        /*
+        *   QUERY THE DATABASE AND STORE ALL USERS INTO A VARIABLE
+        */
+        // Create your query
+        $query = 'SELECT * FROM USER_HINCHCLIFFE';
+        // Run your query
+        $result = mysqli_query($connection, $query);
+        // Check if the database returned anything
+        if($result) {
+            // If the database query was successful, store
+            // the array of users into a variable
+            $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+            print_r($rows);
+        } else {
+            // Output an error
+            echo 'This does not work';
+        }
 ?>
 
 <!doctype html>
@@ -112,7 +107,6 @@ if($result) {
                     <td>'.$row['last_name'].'</td>
                     <td>'.$row['email'].'</td>
                     <td>'.$row['password'].'</td>
-                    <td>'.$row['confirm_password'].'
                 </tr>';
             }
             ?>
