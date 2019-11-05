@@ -6,22 +6,47 @@ include('database.php');
 *   NEW USER INTO THE DATABASE
 */
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $first_name = $POST['first_name'];
-    $last_name = $POST['last_name'];
-    $email = $POST['email'];
-    $password = $POST['password'];
+    if (empty($_POST['first_name'])) {
+        $errors[] = 'You forgot to enter your first name.';
+    } else {
+        $first_name = trim($_POST['first_name']);
+    }
 
+    if (empty($_POST['last_name'])) {
+        $errors[] = 'You forgot to enter your last name.';
+    } else {
+        $last_name = trim($_POST['last_name']);
+    }
 
-    $insert_query = "INSERT INTO USER_HINCHCLIFFE (first_name, last_name, eamil, password)
-                    VALUES ('$first_name', '$last_name', '$email', '$password')";
+    if (empty($_POST['email'])) {
+        $errors[] = 'You forgot to enter your email.';
+    } else {
+        $email = trim($_POST['email']);
+    }
+
+    if(!empty($_POST['password'])) {
+        if ($_POST['password'] != $_POST['confirm_password']) {
+            $errors[] = 'Your passwords do not match.';
+        } else {
+            $password = trim($_POST['password']);
+        }
+    } else {
+        $errors[] = 'You forgot to enter your password.';
+    }
+
+    if (empty($errors)) {
+
+        $insert_query = "INSERT INTO USER_HINCHCLIFFE (first_name, last_name, email, password)
+                        VALUES ('$first_name', '$last_name', '$email', '$password')";
 
     $result = mysqli_query($connection, $insert_query);
 
-    if($result) {
+    if ($result) {
         echo 'new user added to the database';
     }   else {
         echo 'error entering new user';
     }
+}
 }
 /*
 *   QUERY THE DATABASE AND STORE ALL USERS INTO A VARIABLE
@@ -62,7 +87,8 @@ if($result) {
         <label for="password">Password</label>
         <input type="password" id="password" name="password"><br>
 
-        <!--Add a second password input so the user has to retype their password -->
+        <label for="password">Confirm Password</label>
+        <input type="password" id="confirm_password" name="confirm_password"><br>
 
         <button>Register</button>
     </form>
@@ -75,17 +101,19 @@ if($result) {
                 <th>Last Name</th>
                 <th>Email</th>
                 <th>Password</th>
+                <th>Confirm Password</th>
             </tr>
         </thead>
         <tbody>
             <?php // You will be adding a forEach loop here to output the users
             foreach ($rows as $row) {
             echo '<tr>
-                <td>'.$row['first_name'].'</td>
-                <td>'.$row['last_name'].'</td>
-                <td>'.$row['email'].'</td>
-                <td>'.$row['password'].'</td>
-            </tr>';
+                    <td>'.$row['first_name'].'</td>
+                    <td>'.$row['last_name'].'</td>
+                    <td>'.$row['email'].'</td>
+                    <td>'.$row['password'].'</td>
+                    <td>'.$row['confirm_password'].'
+                </tr>';
             }
             ?>
         </tbody>
