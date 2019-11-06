@@ -37,7 +37,7 @@ include('database.php');
             }
 
             if ($result) {
-                    echo 'new user added to the database';
+                    echo 'New user added to the database.';
                 }   else {
                     echo 'error entering new user';
                 }
@@ -54,7 +54,6 @@ include('database.php');
             // If the database query was successful, store
             // the array of users into a variable
             $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
-            print_r($rows);
         } else {
             // Output an error
             echo 'This does not work';
@@ -65,29 +64,49 @@ include('database.php');
 <html>
 <head>
     <title>My First CRUD</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+    @import url('https://fonts.googleapis.com/css?family=Montserrat');
+    html {
+        background: #d15766;
+    }
+    h1 {
+        font-family: 'Dancing Script', cursive;
+        color: #bcc3c8;
+        text-align: center;
+        border: 5px solid #364e62;
+        padding: 20px;
+    }
+    #register {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 25px;
+        padding: 10px;
+        text-align: center;
+        color: #364e62;
+    }
+    </style>
 </head>
 <body>
     <h1>Create a New User</h1>
-    <form action="crud.php" method="POST">
-        <label for="first_name">First Name</label>
+    <form id="register" action="crud.php" method="POST">
+        <label for="first_name">First Name:</label>
         <input type="text" id="first_name" name="first_name"><br>
 
         <label for="last_name">Last Name</label>
         <input type="text" id="last_name" name="last_name"><br>
 
-        <label for="email">Email</label>
+        <label for="email">Email:</label>
         <input type="email" id="email" name="email"><br>
 
-        <label for="password">Password</label>
+        <label for="password">Password:</label>
         <input type="password" id="password" name="password"><br>
 
-        <label for="password">Confirm Password</label>
+        <label for="password">Confirm Password:</label>
         <input type="password" id="confirm_password" name="confirm_password"><br>
-
         <button>Register</button>
     </form>
 
-    <h2>Output a List of Users</h2>
+    <h1>Output of Registered Users</h1>
     <table>
         <thead>
             <tr>
@@ -95,13 +114,12 @@ include('database.php');
                 <th>Last Name</th>
                 <th>Email</th>
                 <th>Password</th>
-                <th>Confirm Password</th>
             </tr>
         </thead>
         <tbody>
             <?php // You will be adding a forEach loop here to output the users
             foreach ($rows as $row) {
-            echo '<tr>
+            echo '<tr class="left">
                     <td>'.$row['first_name'].'</td>
                     <td>'.$row['last_name'].'</td>
                     <td>'.$row['email'].'</td>
