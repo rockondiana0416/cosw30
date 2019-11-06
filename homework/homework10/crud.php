@@ -41,8 +41,6 @@ include('database.php');
                 }   else {
                     echo 'error entering new user';
                 }
-
-
             }
         /*
         *   QUERY THE DATABASE AND STORE ALL USERS INTO A VARIABLE
