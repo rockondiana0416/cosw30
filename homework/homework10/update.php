@@ -8,8 +8,7 @@ if(isset($_GET['id'])) {
     $id = $_GET['id'];
 } else {
     // redirect to crud.php
-    header('Location: crud.php');
-    exit;
+   
 }
 
 /*

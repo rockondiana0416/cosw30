@@ -19,7 +19,12 @@ include('database.php');
             echo "Please enter your last name!</p>";
         }
         if(empty($email)) {
-                echo "Please enter your email address!</p>";
+            echo "Please enter your email address!</p>";
+            if(filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+                // failed
+            } else {
+                // passed
+            }
         }
         if(empty($password)) {
             echo "Please enter a password!</p>";
@@ -28,7 +33,7 @@ include('database.php');
             echo"Please confirm your password!</p>";
         }
 
-        if(!empty($first_name) || (!empty($last_name)) || (!empty($email)) || (!empty($password))) {
+        if(!empty($first_name) && !empty($last_name) && !empty($email) && !empty($password)) {
 
             $insert_query = "INSERT INTO USER_HINCHCLIFFE (first_name, last_name, email, password)
                             VALUES ('$first_name', '$last_name', '$email', '$password')";
@@ -39,7 +44,7 @@ include('database.php');
             if ($result) {
                     echo 'New user added to the database.';
                 }   else {
-                    echo 'error entering new user';
+                    echo 'Error entering new user.';
                 }
             }
         /*
@@ -104,32 +109,35 @@ include('database.php');
 
         <label for="password">Confirm Password:</label>
         <input type="password" id="confirm_password" name="confirm_password"><br>
-        <button>Register</button>
+        <button type="submit" name="submit" class="btn">Register</button>
     </form>
 
     <h1>Output of Registered Users</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-                <th>Password</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php // You will be adding a forEach loop here to output the users
-            foreach ($rows as $row) {
-            echo '<tr class="left">
-                    <td>'.$row['first_name'].'</td>
-                    <td>'.$row['last_name'].'</td>
-                    <td>'.$row['email'].'</td>
-                    <td>'.$row['password'].'</td>
-                    <td><a href="update.php?id='.$row['user_id'].'">Edit</a></td>
-                </tr>';
-            }
-            ?>
-        </tbody>
-    </table>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php // You will be adding a forEach loop here to output the users
+            
+                foreach ($rows as $row) {
+                echo '<tr class="left">
+                        <td>'.$row['first_name'].'</td>
+                        <td>'.$row['last_name'].'</td>
+                        <td>'.$row['email'].'</td>
+                        <td>'.$row['password'].'</td>
+                        <td><a href="update.php?id='.$row['user_id'].'">Edit</a></td>
+                    </tr>';
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
