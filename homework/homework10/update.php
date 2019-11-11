@@ -2,6 +2,18 @@
 // Add the database connection
 include('database.php');
 
+if(isset($_POST['delete'])) {
+    $id_to_delete = mysqli_real_escape_string($conn, $_POST['id_to_delete']);
+
+    $sql = "DELETE FROM USER_HINCHCLIFFE WHERE id = $id_to_delete";
+    if(mysqli_query($conn, $sql)) {
+        header('Location: crud.php');
+    }
+    else {
+        echo 'User not deleted.';
+    }
+}
+
 // CHECK IF THE URL HAS A $_GET VARIABLE CALLED ID
 
 if(isset($_GET['id'])) {
@@ -61,7 +73,7 @@ if($result) {
     // If the database query was successful, store
     // the users information into a variable
     $user = mysqli_fetch_assoc($result);
-    // print_r(user);
+    print_r($user);
 
     $first_name = $user['first_name'];
     $last_name = $user['last_name'];
@@ -93,7 +105,10 @@ if($result) {
         <label for="password">Password</label>
         <input type="text" id="password" name="password" value="<?php echo $password; ?>"><br>
 
-        <button>Update User</button>
+        <input type="hidden" name="id_to_delete" value="<?php echo $user['id']?>">
+        <input type="submit" name="delete" value="Delete" class="btn">
+        <input type="submit" name="update" value="Update User" class="btn">
+
     </form>
 </body>
 </html>
