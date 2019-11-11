@@ -24,7 +24,7 @@ include('database.php');
         if(empty($password)) {
             echo "Please enter a password!</p>";
         }
-        if(empty($confirm_password) || $confirm_password != $password) {
+        if(empty($confirm_password) && $confirm_password === $password) {
             echo"Please confirm your password!</p>";
         }
 

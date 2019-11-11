@@ -27,15 +27,22 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         //     $errors[] = 'Error message';
         // }
 
-        if(empty($errors)) {
-    // If they aren't empty, create and run your query
-    $update_query = "UPDATE USER_HINCHCLIFFE
-                     SET first_name = '$first_name',
-                        last_name = 'last_name',
-                        email = '$email',
-                        password = '$password'
-                        WHERE user_id = $id";
+        if((empty($_POST['first_name'])) && (empty($_POST['last_name'])) && (empty($_POST['email'])) && (empty($_POST['password']))) {
+            $errors[] = 'Please check your information.';
         }
+
+    // If they aren't empty, create and run your query
+            else {
+                $update_query = "UPDATE USER_HINCHCLIFFE
+                                SET first_name = '$first_name',
+                                    last_name = '$last_name',
+                                    email = '$email',
+                                    password = '$password'
+                                    WHERE user_id = $id";
+        }
+
+        header( "Location: crud.php" );
+        exit ;
 
     // Check if the database returned anything
         // If the UPDATE query was successful, redirect to
@@ -54,7 +61,7 @@ if($result) {
     // If the database query was successful, store
     // the users information into a variable
     $user = mysqli_fetch_assoc($result);
-    print_r(user);
+    // print_r(user);
 
     $first_name = $user['first_name'];
     $last_name = $user['last_name'];
@@ -62,7 +69,7 @@ if($result) {
     $password = $user['password'];
 
 } else {
-    // Output an error message
+    echo 'Information was not updated';
 }
 ?>
 
@@ -85,8 +92,6 @@ if($result) {
 
         <label for="password">Password</label>
         <input type="text" id="password" name="password" value="<?php echo $password; ?>"><br>
-
-        // <input type="hidden" name="user_id" value>
 
         <button>Update User</button>
     </form>
