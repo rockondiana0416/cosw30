@@ -2,18 +2,6 @@
 // Add the database connection
 include('database.php');
 
-if(isset($_POST['delete'])) {
-    $id_to_delete = mysqli_real_escape_string($conn, $_POST['id_to_delete']);
-
-    $sql = "DELETE FROM USER_HINCHCLIFFE WHERE id = $id_to_delete";
-    if(mysqli_query($conn, $sql)) {
-        header('Location: crud.php');
-    }
-    else {
-        echo 'User not deleted.';
-    }
-}
-
 // CHECK IF THE URL HAS A $_GET VARIABLE CALLED ID
 
 if(isset($_GET['id'])) {
@@ -34,13 +22,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email      = $_POST['email'];
     $password   = $_POST['password'];
     // Validate the inputs (check if they're empty)
-        $errors = [];
+        // $errors = [];
         // if(failed condition) {
         //     $errors[] = 'Error message';
         // }
 
-        if((empty($_POST['first_name'])) && (empty($_POST['last_name'])) && (empty($_POST['email'])) && (empty($_POST['password']))) {
-            $errors[] = 'Please check your information.';
+        if((empty($_POST['first_name'])) || (empty($_POST['last_name'])) || (empty($_POST['email'])) || (empty($_POST['password']))) {
+            // $errors[] = 'Please check your information.';
         }
 
     // If they aren't empty, create and run your query
@@ -51,16 +39,30 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     email = '$email',
                                     password = '$password'
                                     WHERE user_id = $id";
+                $result = mysqli_query($connection, $update_query);
         }
 
-        header( "Location: crud.php" );
-        exit ;
+        if($result) {
+            echo 'Your information has been updated';
+            header( "Location: crud.php" );
+            exit;
+        } else {
+            echo 'Your information was not updated.';
+        }
+    }
+    
+    
+
+
+        
 
     // Check if the database returned anything
         // If the UPDATE query was successful, redirect to
         // the crud.php page
+        
         // Else, output an error message
-}
+
+
 /*
 *   QUERY THE DATABASE FOR THE USER THAT HAS THE GET ID
 */
@@ -105,8 +107,7 @@ if($result) {
         <label for="password">Password</label>
         <input type="text" id="password" name="password" value="<?php echo $password; ?>"><br>
 
-        <input type="hidden" name="id_to_delete" value="<?php echo $user['id']?>">
-        <input type="submit" name="delete" value="Delete" class="btn">
+        
         <input type="submit" name="update" value="Update User" class="btn">
 
     </form>
