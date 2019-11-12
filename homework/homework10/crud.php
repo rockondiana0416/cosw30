@@ -76,28 +76,7 @@ include('database.php');
 <html>
 <head>
     <title>My First CRUD</title>
-    <link>
-    <style>
-    @import url('https://fonts.googleapis.com/css?family=Dancing+Script');
-    @import url('https://fonts.googleapis.com/css?family=Montserrat');
-    html {
-        background: #d15766;
-    }
-    h1 {
-        font-family: 'Dancing Script', cursive;
-        color: #bcc3c8;
-        text-align: center;
-        border: 5px solid #364e62;
-        padding: 20px;
-    }
-    #register {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 25px;
-        padding: 10px;
-        text-align: center;
-        color: #364e62;
-    }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Create a New User</h1>

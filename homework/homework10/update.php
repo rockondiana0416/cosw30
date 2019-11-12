@@ -74,7 +74,6 @@ if($result) {
     // If the database query was successful, store
     // the users information into a variable
     $user = mysqli_fetch_assoc($result);
-    print_r($user);
 
     $first_name = $user['first_name'];
     $last_name = $user['last_name'];
@@ -90,6 +89,7 @@ if($result) {
 <html>
 <head>
     <title>My First CRUD</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Update User</h1>
