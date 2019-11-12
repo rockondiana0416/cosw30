@@ -19,3 +19,19 @@
         text-align: center;
         color: #364e62;
     }
+    #container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-family: 'Montserrat', sans-serif;
+        color: #bcc3c8;
+        
+    }
+    th {
+        padding: 15px;
+    }
+    td {
+        text-align: left;
+        padding-left: 20px;
+    }

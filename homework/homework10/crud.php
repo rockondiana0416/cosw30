@@ -37,8 +37,7 @@ include('database.php');
         } else {
             // pass
         }
-    }
-
+    
         if(!empty($first_name) && !empty($last_name) && !empty($email) && !empty($password) && ($password === $confirm_password)) {
 
             $insert_query = "INSERT INTO USER_HINCHCLIFFE (first_name, last_name, email, password)
@@ -46,6 +45,7 @@ include('database.php');
 
             $result = mysqli_query($connection, $insert_query);
             }
+        
 
             if ($result) {
                     echo 'New user added to the database.';
@@ -53,6 +53,7 @@ include('database.php');
                     echo 'Error entering new user.';
                 }
             }
+        }
         
         /*
         *   QUERY THE DATABASE AND STORE ALL USERS INTO A VARIABLE
@@ -84,7 +85,7 @@ include('database.php');
         <label for="first_name">First Name:</label>
         <input type="text" id="first_name" name="first_name"><br>
 
-        <label for="last_name">Last Name</label>
+        <label for="last_name">Last Name:</label>
         <input type="text" id="last_name" name="last_name"><br>
 
         <label for="email">Email:</label>
@@ -99,7 +100,7 @@ include('database.php');
     </form>
 
     <h1>Output of Registered Users</h1>
-    <div class="container">
+    <div id="container">
         <table>
             <thead>
                 <tr>
