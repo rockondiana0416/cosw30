@@ -25,15 +25,21 @@ include('database.php');
             } else {
                 // passed
             }
-        }
+
         if(empty($password)) {
             echo "Please enter a password!</p>";
         }
-        if(empty($confirm_password) && $confirm_password === $password) {
-            echo"Please confirm your password!</p>";
+        if(empty($confirm_password)) {
+            echo "Please confirm your password!</p>";
+        } 
+        else if($confirm_password != $password) {
+            echo 'Passwords do not match';
+        } else {
+            // pass
         }
+    }
 
-        if(!empty($first_name) && !empty($last_name) && !empty($email) && !empty($password)) {
+        if(!empty($first_name) && !empty($last_name) && !empty($email) && !empty($password) && ($password === $confirm_password)) {
 
             $insert_query = "INSERT INTO USER_HINCHCLIFFE (first_name, last_name, email, password)
                             VALUES ('$first_name', '$last_name', '$email', '$password')";
@@ -47,6 +53,7 @@ include('database.php');
                     echo 'Error entering new user.';
                 }
             }
+        
         /*
         *   QUERY THE DATABASE AND STORE ALL USERS INTO A VARIABLE
         */
