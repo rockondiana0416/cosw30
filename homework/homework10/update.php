@@ -8,9 +8,7 @@ if(isset($_GET['id'])) {
     $id = $_GET['id'];
 } else {
     // redirect to crud.php
-   
 }
-
 /*
 *   AFTER SUBMITTING THE UPDATE FORM, UPDATE THE INFO
 *   IN THE DATABASE
@@ -29,6 +27,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         if((empty($_POST['first_name'])) || (empty($_POST['last_name'])) || (empty($_POST['email'])) || (empty($_POST['password']))) {
             // $errors[] = 'Please check your information.';
         }
+        
 
     // If they aren't empty, create and run your query
             else {
@@ -40,6 +39,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     WHERE user_id = $id";
                 $result = mysqli_query($connection, $update_query);
         }
+    
 
         if($result) {
             echo 'Your information has been updated';
@@ -49,12 +49,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo 'Your information was not updated.';
         }
     }
+
     
-    
-
-
-        
-
     // Check if the database returned anything
         // If the UPDATE query was successful, redirect to
         // the crud.php page

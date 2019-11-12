@@ -20,7 +20,7 @@ include('database.php');
         }
         if(empty($email)) {
             echo "Please enter your email address!</p>";
-            if(filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+            } else if(filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
                 // failed
             } else {
                 // passed
@@ -46,14 +46,16 @@ include('database.php');
             $result = mysqli_query($connection, $insert_query);
             }
         
+    }
+        
 
             if ($result) {
                     echo 'New user added to the database.';
                 }   else {
                     echo 'Error entering new user.';
                 }
-            }
-        }
+            
+        
         
         /*
         *   QUERY THE DATABASE AND STORE ALL USERS INTO A VARIABLE
