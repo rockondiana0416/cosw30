@@ -1,9 +1,16 @@
 <?php
 session_start();
-include('includes/header.php');
-include('includes/database.php');
+
 // Check if the user is already logged in
 // If they are, redirect to welcome.php
+if(isset($_SESSION['user_id'])) {
+    header('Location: welcome.php');
+    exit;
+}
+
+include('includes/header.php');
+include('includes/database.php');
+
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Grab values from the form inputs
     $email = $_POST['email'];
@@ -19,7 +26,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // If they are, log them in
     if($result) {
-
+    $user = mysqli_fetch_assoc($result);
         // Add their user id to the $_SESSION
         $_SESSION['user_id'] = $user['user_id'];
         $_SESSION['first_name'] = $user['first_name'];
@@ -28,6 +35,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         print_r($_SESSION);
 
         // Redirect to the welcome.php page
+        header('Location: welcome.php');
+        exit;
     // If they aren't, show the log in form with an error
     } else { 
         echo 'Error message';
