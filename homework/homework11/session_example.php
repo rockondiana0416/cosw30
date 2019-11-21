@@ -10,6 +10,7 @@ session_start();
 <body>
 
 <?php
+$_SESSION = [];
 // remove all session variables
 session_unset();
 // destroy the session
@@ -17,4 +18,4 @@ session_destroy();
 ?>
 
 </body>
-</htmL>
+</html>
