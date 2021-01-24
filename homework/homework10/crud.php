@@ -20,7 +20,7 @@ include('database.php');
         }
         if(empty($email)) {
             echo "Please enter your email address!</p>";
-            } else if(filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+            } else if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
                 // failed
             } else {
                 // passed
@@ -43,20 +43,15 @@ include('database.php');
             $insert_query = "INSERT INTO USER_HINCHCLIFFE (first_name, last_name, email, password)
                             VALUES ('$first_name', '$last_name', '$email', '$password')";
 
-            $result = mysqli_query($connection, $insert_query);
-            }
-        
-    }
-        
+            if ($result = mysqli_query($connection, $insert_query)) {
+                echo 'You have successfully enrolled!';
+        } else {
+            echo 'There was an error in your enrollment, please try again.';
 
-            if ($result) {
-                    echo 'New user added to the database.';
-                }   else {
-                    echo 'Error entering new user.';
-                }
-            
-        
-        
+            }
+        }
+    }
+
         /*
         *   QUERY THE DATABASE AND STORE ALL USERS INTO A VARIABLE
         */
@@ -71,7 +66,7 @@ include('database.php');
             $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
         } else {
             // Output an error
-            echo 'This does not work';
+            echo 'This does not work hello';
         }
 ?>
 
