@@ -3,15 +3,12 @@
 body {
   margin: 0;
   color: #E1E2E2;
+  font-family: 'Cinzel', serif;
 }
 
 h1 {
-  border: 10px solid #bf0c3d;
   font-size: 100px;
   text-align: center;
-  background: #3e40c3;
-  color: #00205b;
-  font-family: 'Cinzel', serif;
 }
 
 #statement {
