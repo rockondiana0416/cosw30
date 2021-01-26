@@ -1,111 +1,82 @@
-<!doctype HTML>
+<!Doctype html>
 <html>
   <head>
+    <meta charset="utf-8">
     <title>Marty Byrde for Mayor</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="contact.css" type="text/css">
+    <link rel="stylesheet" href="contact.css">
   </head>
   
   <body>
-    <h1>Marty Byrde for Mayor</h1>
+      
+      <div class="container">
+        <h1>Marty Byrde for Mayor</h1>
         <image src="https://static2.srcdn.com/wordpress/wp-content/uploads/2020/05/Ozark-Feature-Image.jpg?q=50&fit=crop&w=960&h=500&dpr=1.5" alt="" class="hero-image"></image>
-    <p id="statement">My name is Marty Byrde, and I am running for Mayor of the Ozarks, Missouri. I chose to move my family 
-    from Chicago so that we may have a better, slower-paced life. No, that's not true. To be truthful, I launder money for 
-    the Mexican Cartel. Are you excited yet? Now before you jump to conclusions, let me explain. My family is in danger; the 
-    Cartel will kill them unless I launder $500 million. So here I am. I own several businesses in the community, a restaurant, 
-    a strip club, and a funeral home. I am qualified for this position because we will have a requisite amount of money to put 
-    into the community. That means better schools, new playgrounds, newly paved roads, no city taxes, and that's just the start. 
-    I will have your best interest at hand because I must protect my family and protect you, my fellow community members.</p>
-    
-    <form id="election" method="POST" action="process_contact.php">
+            <p id="statement">My name is Marty Byrde, and I am running for Mayor of the Ozarks, Missouri. I chose to move my family from Chicago so that we may have a better, slower-paced life. No, that's not true. To be truthful, I launder money for the Mexican Cartel. Are you excited yet? Now before you jump to conclusions, let me explain. My family is in danger; the Cartel will kill them unless I launder $500 million. So here I am. I own several community businesses, a restaurant, a strip club, and a funeral home. I am qualified for this position because we will have a requisite amount of money to put into the community. That means better schools, new playgrounds, newly paved roads, no city taxes, and that's just the start. I will have your best interest at hand because I must protect my family and protect you, my fellow community members.</p>
+      </div>
+      
+      <form method="POST" action="process_contact.php">
     
       <section id="general">
-      <label for="first_name">First Name:</label> 
-      <input id="first_name" name="name" type="name" placeholder="Enter Your First Name" required>
+          <label for="first_name">First Name:</label>
+          <input id="first_name" name="name" type="name" placeholder="Enter Your First Name" type="text" required>
       
-      <label for="last-name">Last Name:</label>
-      <input id="last_name" name="name" type="name" placeholder="Enter Your Last Name" required>
+          <label for="last-name">Last Name:</label>
+          <input id="last_name" name="name" type="name" placeholder="Enter Your Last Name" type="text" required>
       
-      <label for="email">Email:</label>
-      <input id="email" name="email" type="email" placeholder="Enter Your Email" required>
+          <label for="email">Email:</label>
+          <input id="email" name="email" type="email" placeholder="Enter Your Email" type="text" required>
       </section>
       
       
       <section id="gender">
-      <label for="dropdown">What is your gender?</label> 
-      <select id="dropdown" name="gender" type="text" list="gender">
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="not-say">Prefer not to say.</option>
-        </select>
-      
-    
-      
+          <label for="dropdown">What is your gender?</label>
+          <select id="dropdown" name="gender" type="text" list="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="not-say">Prefer not to say.</option>
+          </select>
+      </section>
+          
       <section id="age">
         <label>What is your age?</label>
         <ul>
-      <li class="radio">
-        <label>
-          <input class="age" name="radio-buttons" value="1" type="radio">18-25
-        </label>
-      </li>
-      <li class="radio">
-        <label>
-          <input class="age" name="radio-buttons" value="2" type="radio">26-34
-        </label>
-      </li>
-      <li class="radio">
-        <label>
-          <input class="age" name="radio-buttons" value="3" type="radio">36-50
-        </label>
-      </li>
-      <li class="radio">
-        <label>
-          <input class="age" name="radio-buttons" value="4" type="radio">50+
-        </label>
-      </li>
-        </ul>
-      </section>
+            <li class="radio">
+                <label><input class="age" name="radio-buttons" value="1" type="radio">18-25</label>
+            </li>
+            <li class="radio">
+                <label><input class="age" name="radio-buttons" value="2" type="radio">26-34</label>
+            </li>
+            <li class="radio">
+                <label><input class="age" name="radio-buttons" value="3" type="radio">36-50</label>
+            </li>
+            <li class="radio">
+                <label><input class="age" name="radio-buttons" value="4" type="radio">50+</label>
+            </li>
+          </ul>
+       </section>
       
       <section id="interests">
         <label>What do you like to do? (Check all that apply.)</label>
         <ul>
           <li class="checkbox">
-            <label>
-              <input class="interests" name="likes" value="1" type="checkbox">
-              Find out how to launder money?
-            </label>
-              </li>
-            <li class="checkbox">
-            <label>
-              <input class="interests" name="likes" value="2" type="checkbox">
-              Bouncer at a strip club
-            </label>
-              </li>
-              <li class="checkbox">
-            <label>
-              <input class="interests" name="likes" value="3" type="checkbox">
-              Mortition
-            </label>
-              </li>
-                <li class="checkbox">
-            <label>
-              <input class="interests" name="likes" value="4" type="checkbox">
-              Boating
-            </label>
-              </li>
-                <li class="checkbox">
-            <label>
-              <input class="interests" name="likes" value="5" type="checkbox">
-              Carpenter
-            </label>
-              </li>
-                <li class="checkbox">
-            <label>
-              <input class="interests" name="likes" value="6" type="checkbox">
-              Guns
-            </label>
-              </li>
+              <label><input class="interests" name="likes" value="1" type="checkbox">Find out how to launder money?</label>
+          </li>
+          <li class="checkbox">
+              <label><input class="interests" name="likes" value="2" type="checkbox">Bouncer at a strip club</label>
+          </li>
+          <li class="checkbox">
+              <label><input class="interests" name="likes" value="3" type="checkbox">Mortition</label>
+          </li>
+          <li class="checkbox">
+              <label><input class="interests" name="likes" value="4" type="checkbox">Boating</label>
+          </li>
+          <li class="checkbox">
+              <label><input class="interests" name="likes" value="5" type="checkbox">Carpenter</label>
+          </li>
+          <li class="checkbox">
+              <label><input class="interests" name="likes" value="6" type="checkbox">Guns</label>
+          </li>
         </ul>
       </section>
       
@@ -171,6 +142,8 @@
         <input id="submit" class="btn" type="submit" value="submit">
           </section>
     </form>
+      
+      
   </body>
     <footer><p>Thank you for your support!</p>
     <p>&copy; This was created by Diana Hinchcliffe 2019 for COSW30</p>

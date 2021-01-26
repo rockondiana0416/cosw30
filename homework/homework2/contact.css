@@ -1,47 +1,55 @@
 @import url('https://fonts.googleapis.com/css?family=Cinzel|Lora');
 
 body {
-  margin: 0;
-  color: #E1E2E2;
-  font-family: 'Cinzel', serif;
+    margin: 0;
+    font-family: 'Cinzel', serif;
 }
 
 h1 {
-  font-size: 100px;
-  text-align: center;
+    font-size: 6rem;
+    text-align: center;
+    color: #2b2e39;
+    background-color: #562033;
+    margin-top: 0;
+    padding: .5em 0;
+    text-shadow: -.03em -.03em black;
+    border-bottom: 8px solid #2b2e39;
+}
+
+.hero-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    /*padding-bottom: 3em;*/
+    box-shadow: -3px -3px 5px  black;
+    margin-bottom: 4em;
 }
 
 #statement {
-  color: #ffffff;
-  background: #00205b;
-  border: 10px solid #bf0c3d;
-  text-align: center;
-  font-family: 'Cinzel', serif;
-  padding: 50px 60px;
-  font-size: 20px;
-}
-
-#election {
-  color: #ffffff;
-  border: 10px solid #bf0c3d;
-  padding: 60px;
-}
-
-footer {
-  font-size: 30px;
-  text-align: center;
-  padding:50px;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    padding: 50px 60px;
+    font-size: 20px;
+    background-color: #562033;
+    color: #E1E2E2;
 }
 
 #dropdown {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 #election {
-  display: block;
-  padding: 20px;
+    display: block;
+    padding: 20px;
 }
 
 .radio, .checkbox {
-  list-style-type: none;
+    list-style-type: none;
+}
+
+footer {
+    font-size: 30px;
+    text-align: center;
+    padding:50px;
 }
